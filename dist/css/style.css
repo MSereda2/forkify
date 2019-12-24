@@ -19,7 +19,8 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: #655A56;
-  background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
+  /* background-image: linear-gradient(to right bottom, #FBDB89, #F48982); */
+  background-image: linear-gradient(to right bottom, rgb(26, 25, 25), #F48982);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: calc(100vh - 2 * 4vw); }
@@ -158,6 +159,7 @@ body {
 .header {
   grid-area: head;
   background-color: #F9F5F3;
+  /* background-color: #968B87; */
   display: flex;
   align-items: center;
   justify-content: space-between; }

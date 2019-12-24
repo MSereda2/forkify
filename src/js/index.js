@@ -1,3 +1,3 @@
 // Global app controller
 import x from './test';
-console.log(`i fucking impotred ${x} from another module`);
+console.log(`nowww ${x} from another module`);
