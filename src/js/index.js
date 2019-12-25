@@ -1,5 +1,7 @@
 // Global app controller
 import Search from './models/Search';
+import {elements} from './views/base';
+import * as searchView from './views/searchView';
 
 /** GLOBAL STATE OF THE APP
  * - Search object
@@ -11,7 +13,7 @@ const state = {};
 
 const controlSearch = async () => {
    // 1) Get query from the view
-   const query = `pizza` // TODO
+   const query = `bacon` // TODO
 
    if(query) {
       // 2) New search object and add it to state
@@ -27,7 +29,7 @@ const controlSearch = async () => {
    }
 }
 
-document.querySelector(`.search`).addEventListener(`submit`, event => {
+elements.searchForm.addEventListener(`submit`, event => {
    event.preventDefault();
    controlSearch();
 })
