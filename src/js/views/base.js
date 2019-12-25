@@ -1,4 +1,5 @@
-export const element = {
+export const elements = {
     searchInput: document.querySelector(`.search__field`),
-    searchForm: document.querySelector(`.search`)
+    searchForm: document.querySelector('.search'),
+    listResults: document.querySelector('.results__list')
 }
