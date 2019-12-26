@@ -51,9 +51,29 @@ elements.searchResPages.addEventListener('click', e => {
 })
 
 /* RECIPE CONTROLLER */
-const controlRecipe = () => {
-   const id = window.location.hash;
+const controlRecipe = async () => {
+   // Get id from URl
+   const id = window.location.hash.replace('#', '');
    console.log(id);
+
+   if(id) {
+      // Prepare UI for changes
+
+      // Create new Recipe object
+      state.recipe = new Recipe(id);
+
+      // Get Recipe data
+      await state.recipe.getRecipe();
+
+      // Calculate servings and time
+      state.recipe.calcServings();
+      state.recipe.calcTime();
+
+      // Render recipe
+      console.log(state.recipe);
+   }
 };
 
-window.addEventListener('hashchange', controlRecipe);
+// window.addEventListener('hashchange', controlRecipe);
+// window.addEventListener('load', controlRecipe);
+['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
