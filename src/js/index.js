@@ -61,6 +61,7 @@ const controlRecipe = async () => {
 
       // Create new Recipe object
       state.recipe = new Recipe(id);
+      window.r = state.recipe;
 
       // Get Recipe data
       await state.recipe.getRecipe();
