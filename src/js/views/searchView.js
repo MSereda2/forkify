@@ -11,6 +11,15 @@ export const clearResults = () => {
     elements.searchResPages.innerHTML = '';
 };
 
+export const highlightSelected = id => {
+    const resultsArr = Array.from(document.querySelectorAll(`.results__link`));
+    resultsArr.forEach(el => {
+        el.classList.remove('results__link--active');
+    });
+
+    document.querySelector(`a[href="#${id}"]`).classList.add('results__link--active');
+};
+
 /*
  // 'Pasta with tamoto and spinsh'.split(' ') => ['pasta', 'with', 'tamoto', 'and', 'spinsh']
  //acc: 0/ acc + curr.length = 0 + 5 = 5; pasta

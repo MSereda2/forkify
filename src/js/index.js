@@ -66,6 +66,10 @@ const controlRecipe = async () => {
       state.recipe = new Recipe(id);
       window.r = state.recipe;
 
+      // Hightlight selected search item
+      if(state.search) {
+         searchView.highlightSelected(id);
+      } 
       // Get Recipe data and parse ingredients
       await state.recipe.getRecipe();
       state.recipe.parseIngredients();
