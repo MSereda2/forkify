@@ -119,7 +119,7 @@ export const renderRecipe = recipe => {
 
 export const updateServings = recipe => {
     // Update the sevings
-    document.querySelector('. recipe__info-data--people').textContent = recipe.servings;
+    document.querySelector('.recipe__info-data--people').textContent = recipe.servings;
 
     // Update ingredeints
     const countElements = Array.from(document.querySelectorAll('.recipe__count'));
