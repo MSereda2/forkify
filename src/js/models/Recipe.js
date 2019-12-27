@@ -50,6 +50,13 @@ export default class Recipe {
             let objIng;
             if(unitIndex > -1) {
                 // There is a unit
+                const arrCount = arrIng.slice(0, unitIndex);
+                let count;
+                if(arrCount.length === 1) {
+                    count = arrIng[0].replace()
+                } else {
+                    count = eval(arrIng.slice(0, unitIndex).join('+'));
+                }
             } else if(parseInt(arrIng[0], 10)) {
                 // There is not unit but 1st element is a number
                 objIng = {
@@ -66,7 +73,7 @@ export default class Recipe {
                 }
             }
 
-            return ingredients;
+            return objIng;
         })
         this.ingredients = newIngredients;
     }
