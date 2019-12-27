@@ -92,10 +92,15 @@ const controlRecipe = async () => {
 elements.recipeList.addEventListener('click', e => {
    if(e.target.matches('.btn-decrease, .btn-decrease *')) {
       // Decrease button is cliked
-      state.recipe.updateServings('dec');
+      if(state.recipe.servings > 1) {
+         state.recipe.updateServings('dec');
+         recipeView.updateServings(state.recipe);
+      }
    } else if(e.target.matches('.btn-increase, .btn-increase *')) {
       // increase button is cliked
       state.recipe.updateServings('inc');
+      recipeView.updateServings(state.recipe);
+
    }
    console.log(state.recipe)
 });
